@@ -59,6 +59,17 @@ p, li {
   margin-bottom: 1rem;
 }
 
+.image {
+  flex: 1;
+}
+
+.image img {
+  width: 50%;
+  height: 50%;
+  object-fit: cover;
+  filter: grayscale(100%);
+}
+
 footer {
   text-align: center;
   padding: 1rem;
@@ -66,15 +77,4 @@ footer {
   border-top: 1px solid #ddd;
   font-size: 0.9rem;
   color: #555;
-}
-
-.image {
-  flex: 1;
-}
-
-.image img {
-  width: 25%;
-  height: 25%;
-  object-fit: cover;
-  filter: grayscale(100%);
 }
