@@ -70,12 +70,17 @@ h2 {
 h3 {
   font-size: 1.2rem;
   color: #111;
-  margin-top: 0.5rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
-.section ul {
-  margin-top: 0.4rem;
-  margin-bottom: 0.3rem;
+/* ===== SECTIONS ===== */
+.section {
+  margin-bottom: 1.5rem;
+}
+
+.section:last-child {
+  margin-bottom: 0;
 }
 
 /* ===== TEXT + IMAGE LAYOUT ===== */
