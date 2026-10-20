@@ -75,11 +75,11 @@ h3 {
   font-size: 1.2rem;
   color: #111;
   margin-top: 0;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
 }
 
 p {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.4rem;
 }
 
 .section ul {
@@ -179,6 +179,6 @@ footer {
 
   .section,
   main > section {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
 }
