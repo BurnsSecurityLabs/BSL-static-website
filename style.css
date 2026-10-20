@@ -56,7 +56,7 @@ main {
 .section,
 main > section {
   display: flow-root;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .section:last-child,
