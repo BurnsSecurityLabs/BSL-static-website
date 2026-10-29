@@ -15,6 +15,7 @@ The project represents a personal-style static site with multiple pages and basi
 ```text
 .github/workflows/
   └─ static.yml        # GitHub Actions workflow for deployment
+  └─ semgrep.yml       # Static code scanner
 
 index.html             # Landing / home page
 about.html             # About page
