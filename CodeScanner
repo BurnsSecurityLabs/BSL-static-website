@@ -1,0 +1,27 @@
+.github/workflows/semgrep.yml
+
+name: Semgrep
+
+on:
+  push:
+    branches: [ "main" ] # Update to "master" if your default branch is master
+  pull_request:
+    branches: [ "main" ]
+  schedule:
+    - cron: '20 14 * * 1' # Runs every Monday at 14:20 UTC
+
+permissions:
+  contents: read
+  security-events: write
+  actions: read
+
+jobs:
+  semgrep:
+    name: Scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run Semgrep
+        uses: semgrep/semgrep-action@v1
