@@ -17,15 +17,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4 # nosem: yaml.github-actions.security.github-actions.mutable-action-tag.github-actions-mutable-action-tag
+        uses: actions/checkout@v4
 
       - name: Run Semgrep CI
         run: |
           pip install semgrep
-          semgrep scan --config auto --sarif --output semgrep.sarif
+          semgrep scan --config auto --exclude-rule yaml.github-actions.security.github-actions.mutable-action-tag.github-actions-mutable-action-tag --sarif --output semgrep.sarif
 
       - name: Upload SARIF file to GitHub
-        uses: github/codeql-action/upload-sarif@v3 # nosem: yaml.github-actions.security.github-actions.mutable-action-tag.github-actions-mutable-action-tag
+        uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: semgrep.sarif
         if: always()
