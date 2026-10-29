@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4 # nosemgrep
+        uses: actions/checkout@v4 # nosemgrep: yaml.github-actions.security.github-actions.mutable-action-tag.github-actions-mutable-action-tag
 
       - name: Run Semgrep CI
         run: |
@@ -25,7 +25,7 @@ jobs:
           semgrep scan --config auto --config p/secrets --sarif --output semgrep.sarif
 
       - name: Upload SARIF file to GitHub
-        uses: github/codeql-action/upload-sarif@v3 # nosemgrep
+        uses: github/codeql-action/upload-sarif@v3 # nosemgrep: yaml.github-actions.security.github-actions.mutable-action-tag.github-actions-mutable-action-tag
         with:
           sarif_file: semgrep.sarif
         if: always()
