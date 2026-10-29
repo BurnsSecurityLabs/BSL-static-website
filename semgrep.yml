@@ -4,11 +4,9 @@ name: Semgrep
 
 on:
   push:
-    branches: [ "main" ] # Update to "master" if your default branch is master
+    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-  schedule:
-    - cron: '20 14 * * 1' # Runs every Monday at 14:20 UTC
 
 permissions:
   contents: read
@@ -25,3 +23,10 @@ jobs:
 
       - name: Run Semgrep
         uses: semgrep/semgrep-action@v1
+        with:
+          generate-sarif: "1"
+
+      - name: Upload SARIF file
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: semgrep.sarif
