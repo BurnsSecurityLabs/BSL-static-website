@@ -52,6 +52,7 @@ This site is deployed automatically using **GitHub Actions**.
 * Content and structure may change frequently
 * Commits prioritize learning over polish
 * No guarantee of stability or completeness
+* Semgrep scanner configured
 
 ---
 
