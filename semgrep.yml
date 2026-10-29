@@ -12,7 +12,7 @@ permissions:
   actions: read
 
 jobs:
-  semgrep:
+ semgrep:
     name: Scan
     runs-on: ubuntu-latest
     steps:
@@ -20,9 +20,12 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run Semgrep
-        run: npx semgrep scan --config auto --sarif --output semgrep.sarif
+        uses: semgrep/semgrep-action@v1
+        with:
+          publishToken: ${{ secrets.SEMGREP_APP_TOKEN }} # Optional, leave blank for OSS mode
+          generate-sarif: "1"
 
-      - name: Upload SARIF file
+      - name: Upload SARIF file to GitHub
         uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: semgrep.sarif
